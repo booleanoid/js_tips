@@ -5,6 +5,27 @@
 </head>
 <body>
 	<script type="text/javascript">
+		//Array Object
+		var ary = new Array('Jack', 'Queen', 'King');
+		console.log(ary); // ["Jack", "Queen", "King"]
+		console.log(ary.length); // 3
+
+		//Stack LIFO: Last In First Out
+		var ary1 = [];
+		ary1.push('January');
+		ary1.push('February');
+		ary1.push('March');
+		console.log(ary1); // ["January", "February", "March"]
+		console.log(ary1.pop()); // March
+
+		//Queue FIFO: First In First Out
+		var ary2 = [];
+		ary2.push('One');
+		ary2.push('Two');
+		ary2.push('Tree');
+		console.log(ary2); // ["One", "Two", "Tree"]
+		console.log(ary2.shift()); // One
+
 		//Map Object
 		var m = new Map();
 		m.set(1, 'hoge');
