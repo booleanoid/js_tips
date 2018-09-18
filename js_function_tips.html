@@ -18,6 +18,16 @@
 		console.log(scope); // Global
 		console.log(getValue()); // Local
 
+		function getMaxMin(...num) {
+			return [Math.max(...num), Math.min(...num)];
+		}
+		let max_min = getMaxMin(3, 6, 5, 14, 29, 8, 19);
+		console.log(max_min); // [29, 3]
+
+		let [max, min] = getMaxMin(3, 6, 5, 14, 29, 8, 19);
+		console.log(max); // 29
+		console.log(min); // 3
+
 
 	</script>
 
