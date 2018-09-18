@@ -101,23 +101,14 @@
 			price: 5000,
 			owner: 'Takeshi',
 		}
-
-
 		
 		Object.assign(instrument, instrument_1, instrument_2);
 		console.log(instrument); // {name: "Electric guitar", sound: "gyui-n", maker: "Gibson", type: "ES-335", madeby: "Johnson", …}
+		console.log(instrument.name); // Electric guitar
 
-		let instrument2 = {
-			name: 'Rhode piano',
-			sound: 'pho-n',
-			maker: 'Fender',
-		}
-
-		let instrument3 = {
-			name: 'djembe',
-			sound: 'paca',
-			maker: 'REMO',
-		}
+		//eval
+		var str = 'console.log("eval test")';
+		eval(str);
 
 
 
