@@ -9,6 +9,15 @@
 		var introduce = new Function('first_name', 'last_name', 'return "My name is " + first_name + " " + last_name');
 		console.log(introduce('Taro', 'Suzuki'));
 
+		var scope = 'Gloval';
+
+		function getValue() {
+			var scope = 'Local';
+			return scope;
+		}
+		console.log(scope); // Global
+		console.log(getValue()); // Local
+
 
 	</script>
 
