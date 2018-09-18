@@ -83,6 +83,45 @@
 		console.log(d);
 		console.log(d.getFullYear());
 
+		//merge object tips
+		console.log('-assign method-----');
+		
+		let instrument = {
+			name: 'Electric guitar',
+			sound: 'gyui-n',
+			maker: 'Gibson',
+		}
+		let instrument_1 = {
+			type: 'ES-335',
+			madeby: 'Johnson',
+			create_at: '1997-10-10',
+		}
+		let instrument_2 = {
+			color: 'Red',
+			price: 5000,
+			owner: 'Takeshi',
+		}
+
+
+		
+		Object.assign(instrument, instrument_1, instrument_2);
+		console.log(instrument); // {name: "Electric guitar", sound: "gyui-n", maker: "Gibson", type: "ES-335", madeby: "Johnson", …}
+
+		let instrument2 = {
+			name: 'Rhode piano',
+			sound: 'pho-n',
+			maker: 'Fender',
+		}
+
+		let instrument3 = {
+			name: 'djembe',
+			sound: 'paca',
+			maker: 'REMO',
+		}
+
+
+
+
 	</script>
 
 </body>
