@@ -6,11 +6,13 @@
 <body>
 	<script type="text/javascript">
 		//Array Object
+		console.log('-Array-------------');
 		var ary = new Array('Jack', 'Queen', 'King');
 		console.log(ary); // ["Jack", "Queen", "King"]
 		console.log(ary.length); // 3
 
 		//Stack LIFO: Last In First Out
+		console.log('-Stack-------------');
 		var ary1 = [];
 		ary1.push('January');
 		ary1.push('February');
@@ -19,12 +21,43 @@
 		console.log(ary1.pop()); // March
 
 		//Queue FIFO: First In First Out
+		console.log('-Queue-------------');
 		var ary2 = [];
 		ary2.push('One');
 		ary2.push('Two');
 		ary2.push('Tree');
 		console.log(ary2); // ["One", "Two", "Tree"]
 		console.log(ary2.shift()); // One
+
+		//forEach
+		console.log('-forEach-----------');
+		var ary3 = new Array(1, 2, 4, 8, 16, 32);
+		ary3.forEach(function(value, index, array) {
+			console.log(value + '*' + value + '=' + value * value);
+			// console.log(array);
+		});
+
+		//callback map
+		console.log('-callback map-----');
+		var cb_result = ary3.map(function(v, i, a){
+			return v * v;
+		});
+		console.log(cb_result);
+
+		//some method
+		console.log('-some-----');
+		var some_result = ary3.some(function(v, i, a){
+			return v%3 === 0;
+		});
+		console.log('Is ' + ary3 + ' including multiple of 3?:' + some_result);
+
+		//filter method
+		console.log('-filter-----');
+		var filter_result = ary3.filter(function(v, i, a) {
+			return v < 20;
+		});
+		console.log('less than 20: ' + filter_result);
+
 
 		//Map Object
 		var m = new Map();
