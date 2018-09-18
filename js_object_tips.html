@@ -60,11 +60,14 @@
 
 
 		//Map Object
+		console.log('-Map-----');
 		var m = new Map();
 		m.set(1, 'hoge');
-		m.set(2, 'hoge');
-		m.set(4, 'hoge');
+		m.set(2, 'fuga');
+		m.set(4, 'hogegege');
 		console.log(m);
+		console.log('Map get 2');
+		console.log(m.get(2)); // fuga
 
 		//Set Object
 		let s = new Set();
@@ -79,6 +82,7 @@
 		var d = new Date();
 		console.log(d);
 		console.log(d.getFullYear());
+
 	</script>
 
 </body>
