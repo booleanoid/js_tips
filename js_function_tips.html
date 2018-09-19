@@ -29,6 +29,19 @@
 		console.log(min); // 3
 
 
+		//closure function 
+		console.log('-closure---');
+		function closure(init_num) {
+			var counter = init_num;
+			return function() {
+				return ++init_num;
+			}
+		}
+		var closureObj = closure(4);
+		console.log(closureObj());
+		console.log(closureObj());
+		console.log(closureObj());
+
 	</script>
 
 </body>
