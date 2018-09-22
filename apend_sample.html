@@ -17,7 +17,7 @@
 			<input id="btn" type="button" value="add link">
 		</div>
 	</form>
-	<div id="list"></div>
+	<ul id="list"></ul>
 
 	<script type="text/javascript">
 
@@ -26,6 +26,8 @@
 				var name = document.getElementById('name');
 				var url = document.getElementById('url');
 				// console.log(name.value);
+				var li = document.createElement('li');
+
 				var anchor = document.createElement('a');
 				anchor.href = url.value;
 				anchor.target = '_blank';
@@ -33,10 +35,12 @@
 				text = document.createTextNode(name.value);
 				anchor.appendChild(text);//
 
+				li.appendChild(anchor);
+
 				var br = document.createElement('br');
 
 				var list = document.getElementById('list');
-				list.appendChild(anchor);
+				list.appendChild(li);
 				list.appendChild(br);
 
 			}, false);
