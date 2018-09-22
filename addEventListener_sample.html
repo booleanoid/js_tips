@@ -6,10 +6,18 @@
 <body>
 <input id="btn" type="button" value="Push" />
 
+<input id="replace_btn" type="button" value="Push!" />
+
+<p id="replace_text">ここをクリックすると？？？</p>
+
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function() {
 			document.getElementById('btn').addEventListener('click', function() {
 				window.alert('clicked!');
+			}, false);
+
+			document.getElementById('replace_text').addEventListener('click', function() {
+				document.getElementById('replace_text').innerHTML = '<select name="example"><option value="サンプル1">サンプル1</option><option value="サンプル2">サンプル2</option><option value="サンプル3">サンプル3</option></select>'
 			}, false);
 		}, false);
 
