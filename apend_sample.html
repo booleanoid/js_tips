@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>js object tips</title>
+</head>
+<body>
+	<form>
+		<div>
+			<label for="name">名前</label><br />
+			<input id="name" name="name" type="text" size="50" />
+		</div>
+		<div>
+			<label for="url">年齢</label><br />
+			<input id="url"  name="url" type="url" size="100" />
+		</div>
+
+		<div>
+			<input id="btn" type="button" value="add link">
+		</div>
+	</form>
+	<div id="list"></div>
+
+	<script type="text/javascript">
+
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('btn').addEventListener('click', function() {
+				var name = document.getElementById('name');
+				var url = document.getElementById('url');
+				// console.log(name.value);
+				var anchor = document.createElement('a');
+				anchor.href = url.value;
+				anchor.target = '_blank';
+				anchor.title = name.value;
+				text = document.createTextNode(name.value);
+				anchor.appendChild(text);//
+
+				var br = document.createElement('br');
+
+				var list = document.getElementById('list');
+				list.appendChild(anchor);
+				list.appendChild(br);
+
+			}, false);
+
+		}, false);
+
+	</script>
+
+</body>
+</html>
