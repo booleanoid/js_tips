@@ -12,13 +12,21 @@
 
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function() {
-			document.getElementById('btn').addEventListener('click', function() {
+			var btn = document.getElementById('btn');
+			btn.addEventListener('click', function() {
 				window.alert('clicked!');
 			}, false);
 
-			document.getElementById('replace_text').addEventListener('click', function() {
+			var replace_text = document.getElementById('replace_text');
+			replace_text.addEventListener('click', function(e) {
 				document.getElementById('replace_text').innerHTML = '<select name="example"><option value="サンプル1">サンプル1</option><option value="サンプル2">サンプル2</option><option value="サンプル3">サンプル3</option></select>'
+				var target = e.target;
+				console.log('発生元:' + target.nodeName + '-' + target.id);
+				console.log('種類:' + e.type);
+				console.log('X座標:' + e.clientX);
+				console.log('Y座標:' + e.clientY);
 			}, false);
+			// replace_text.removeEventListener('click', listener, false);
 		}, false);
 
 	</script>

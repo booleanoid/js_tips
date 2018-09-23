@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>js object tips</title>
+</head>
+<body>
+	<form>
+		<div>
+			<label for="name">名前</label><br />
+			<input id="name" name="name" type="text" size="50" />
+		</div>
+		<div>
+			<input id="btn" type="button" name="submit" value="send">
+		</div>
+	</form>
+	<ul id="result"></ul>
+
+	<script type="text/javascript">
+
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('btn').addEventListener('click', function() {
+				document.getElementById('name');
+				var result = document.getElementById('result');
+				var xhr = new XMLHttpRequest();
+				console.log(xhr.readyState);
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState === 4){
+						if (xhr.status === 200) {
+							result.textContent = xhr.responseText;
+						} else {
+							result.textContent = 'server error';
+						}
+					} else {
+						result.textContent = '通信中';
+					}
+				};
+				xhr.open('GET', './ajax_sample.php?name=' + encodeURIComponent(document.getElementById('name').value), true);
+				xhr.send(null);
+
+			}, false);
+		}, false);
+
+	</script>
+
+</body>
+</html>
