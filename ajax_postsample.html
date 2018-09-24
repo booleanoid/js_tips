@@ -81,16 +81,16 @@
 					var age = $(this).val();
 					var user_id = $( this ).parent( 'li' ).children('span.user_id').text();
 					var class_name = $( this ).attr( 'class' );
-					console.log($(this).val());
-					console.log( $( this ).attr( 'class' ) );
-					console.log( $( this ).parent( 'li' ).children('span.user_id').text() );
+					// console.log($(this).val());
+					// console.log( $( this ).attr( 'class' ) );
+					// console.log( $( this ).parent( 'li' ).children('span.user_id').text() );
 
 					if(class_name == 'user_age'){
 						$.ajax({
 						  type: "POST",
 						  url: "ajax_post.php",
 						  data: "id=" + user_id + "&age=" + age,
-							  success: function(msg){
+						  success: function(msg){
 						    alert( "Saved: " + msg );
 						  }
 						});
@@ -104,9 +104,7 @@
 			        $(this).attr('id','element' + (i+1));
 			        $(this).children('.sort_id').val(i+1);
 			        var user_id = $( this ).children('span.user_id').text();
-			        console.log(user_id);
 			        var sort_id = i+1;
-
 			        $.ajax({
 			        	type: "POST",
 			        	url: "update_sort_id.php",
