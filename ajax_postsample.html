@@ -1,23 +1,32 @@
 <html>
 <head>
 	<title>js object tips</title>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 </head>
 <body>
 	<?php
-	echo('aaa');
+	// echo('aaa');
 	$db = new SQLite3( 'sample.sqlite3' );
 	//var_dump($db);
 	
-	$sql = 'SELECT * FROM user';
+	$sql = 'SELECT * FROM user ORDER BY sort_id ASC';
 	$result = $db->query($sql);
-	
-	//var_dump($result);
-	echo '<ul>';
+
+	// $db->close();
+	// var_dump($update);
+	$i = 1;
+	echo '<ul id="user" class="sortable">';
 	while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
-		echo '<li>';
- 		echo $row['id'];
+		echo '<li class="list_' . $i++ . '">';
+ 		echo '<span class="user_id">'.$row['id'].'</span>';
+ 		echo '<input name="sort_id" class="sort_id" type="text" size="4" value="' . $row['sort_id'] .'" />';
  		echo $row['name'];
- 		echo $row['age'];
+ 		echo '<input name="age" class="user_age" type="text" size="4" value="' . $row['age'] .'" />';
+ 		//echo $row['age'];
  		echo '</li>';
 	}
 	echo '</ul>';
@@ -38,7 +47,7 @@
 
 		document.addEventListener('DOMContentLoaded', function() {
 			document.getElementById('btn').addEventListener('click', function() {
-				document.getElementById('name');
+				// document.getElementById('name');
 				var result = document.getElementById('result');
 				var xhr = new XMLHttpRequest();
 				console.log(xhr.readyState);
@@ -53,13 +62,67 @@
 						result.textContent = '通信中';
 					}
 				};
-				xhr.open('GET', './ajax_sample.php?name=' + encodeURIComponent(document.getElementById('name').value), true);
-				xhr.send(null);
 
+				xhr.open('POST', './ajax_sample.php', true);
+				xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+				xhr.send('name=' + encodeURIComponent(document.getElementById('name').value));
 			}, false);
+
+  		// [].forEach.call(document.getElementsByClassName("sort_id"),function(x){
+    		// x.addEventListener('change', function() {
+    			// console.log('sss');
+    		// });
+      // });
+
 		}, false);
 
-	</script>
+			$(function() {
+				$('input').change(function() {
+					var age = $(this).val();
+					var user_id = $( this ).parent( 'li' ).children('span.user_id').text();
+					var class_name = $( this ).attr( 'class' );
+					console.log($(this).val());
+					console.log( $( this ).attr( 'class' ) );
+					console.log( $( this ).parent( 'li' ).children('span.user_id').text() );
+
+					if(class_name == 'user_age'){
+						$.ajax({
+						  type: "POST",
+						  url: "ajax_post.php",
+						  data: "id=" + user_id + "&age=" + age,
+							  success: function(msg){
+						    alert( "Saved: " + msg );
+						  }
+						});
+					}
+				});
+
+	      $(".sortable").sortable({
+	      	update: function() {
+	      		
+	      		$('ul li').each(function(i){
+			        $(this).attr('id','element' + (i+1));
+			        $(this).children('.sort_id').val(i+1);
+			        var user_id = $( this ).children('span.user_id').text();
+			        console.log(user_id);
+			        var sort_id = i+1;
+
+			        $.ajax({
+			        	type: "POST",
+			        	url: "update_sort_id.php",
+			        	data: "id=" + user_id + "&sort_id=" + sort_id,
+			        	success: function(msg) {
+			        		alert('success: ' + msg);
+			        	}
+			        });
+			        console.log('change');
+				    });
+	      	}
+	      });
+	      $(".sortable").disableSelection();
+			});
+
+</script>
 
 </body>
 </html>

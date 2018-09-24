@@ -33,10 +33,8 @@
 						result.textContent = '通信中';
 					}
 				};
-				xhr.open('POST', './ajax_sample.php', true);
-				xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-				xhr.send('name=' + encodeURKComponent(document.getElementById('name').value));
-
+				xhr.open('GET', './ajax_sample.php?name=' + encodeURIComponent(document.getElementById('name').value), true);
+				xhr.send(null);
 			}, false);
 		}, false);
 
