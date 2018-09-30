@@ -6,7 +6,13 @@ var app = new Vue({
 		item: {
 			id: 'main_column',
 			class: 'main',
-		}
+		},
+		circle: {
+			id: 'circle',
+			width: 300,
+			height: 300,
+		},
+		radius: 60,
 	},
 	methods: {
 		handleClick: function(event) {
