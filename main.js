@@ -13,10 +13,18 @@ var app = new Vue({
 			height: 300,
 		},
 		radius: 60,
+		guitars: [
+			{ id: 1, name: 'telecaster', vote: 0 },
+			{ id: 2, name: 'stratocaster', vote: 0 },
+			{ id: 3, name: 'lespaul', vote: 0 },
+		]
 	},
 	methods: {
 		handleClick: function(event) {
 			alert(event.target)
-		}
+		},
+		doVote: function(index) {
+      this.guitars[index].vote += 1
+    }
 	}
 })

@@ -15,6 +15,16 @@
 			<circle cx="150" cy="150" v-bind:r="radius" fill="lightblue" />
 		</svg>
 		<input type="range" min="0" max="100" v-model="radius">
+
+		<section>
+			<h2>vote guitar</h2>
+			<ul>
+				<li v-for="(g, index) in guitars" v-bind:key="g.id">
+					ID: {{ g.id }} Name: {{ g.name }} vote: {{ g.vote }}
+					<button v-on:click="doVote(index)">vote</button>
+				</li>
+			</ul>
+		</section>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
