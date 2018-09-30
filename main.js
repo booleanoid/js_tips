@@ -3,6 +3,10 @@ var app = new Vue({
 	data: {
 		message: 'Hello Vue!!!',
 		list: ['one', 'two', 'three', 'four', 'five'],
+		item: {
+			id: 'main_column',
+			class: 'main',
+		}
 	},
 	methods: {
 		handleClick: function(event) {
