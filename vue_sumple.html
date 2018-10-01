@@ -2,6 +2,15 @@
 <head>
 	<meta charset="utf-8">
 	<title>Vue sample</title>
+	<style>
+		img {
+			opacity: 1;
+			transition: opacity 1s;
+		}
+		img.hide {
+			opacity: 0;
+		}
+	</style>
 </head>
 <body>
 	<div id="app">
@@ -23,6 +32,11 @@
 					ID: {{ g.id }} Name: {{ g.name }} vote: {{ g.vote }}
 					<button v-on:click="doVote(index)">vote</button>
 				</li>
+			</ul>
+			<ul>
+				<li><img src="./img/001.jpg" v-on:load="show=true" v-bind:class="{hide: !show}"></li>
+				<li><img src="./img/002.jpg" v-on:load="show=true" v-bind:class="{hide: !show}"></li>
+				<li><img src="./img/003.jpg" v-on:load="show=true" v-bind:class="{hide: !show}"></li>
 			</ul>
 		</section>
 	</div>
