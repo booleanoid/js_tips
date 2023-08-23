@@ -3,6 +3,9 @@
     status: "active",
     color: ["red"],
     weight: 1500,
+    getStatus(){
+        return this.status;
+    }
 }
 console.log(obj.kinds);
 
@@ -12,3 +15,6 @@ console.log(obj.color);
 
 //length は()は不要
 console.log(obj.color.length);
+
+//getStatusメソッド追加
+console.log(obj.getStatus());
