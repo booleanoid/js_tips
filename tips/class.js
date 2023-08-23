@@ -3,9 +3,14 @@
     status: "active",
     color: ["red"],
     weight: 1500,
+    owner: {
+        name: 'takeshi',
+        age: 46,
+    },
     getStatus(){
         return this.status;
     }
+
 }
 console.log(obj.kinds);
 
