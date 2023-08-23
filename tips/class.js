@@ -23,3 +23,6 @@ console.log(obj.color.length);
 
 //getStatusメソッド追加
 console.log(obj.getStatus());
+
+//オブジェクトの入れ子の表示
+console.log(obj.owner.name);
