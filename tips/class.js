@@ -24,5 +24,8 @@ console.log(obj.color.length);
 //getStatusメソッド追加
 console.log(obj.getStatus());
 
+//object内のobject
+console.log(obj.owner);
+
 //オブジェクトの入れ子の表示
 console.log(obj.owner.name);
