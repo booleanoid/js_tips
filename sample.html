@@ -16,7 +16,7 @@ target_date.forEach(( v ) => {
 	v.addEventListener('click', {target: v.id, handleEvent: getDate});
 })
 
-function getDate( e ){
+function getDate(){
 	let date = new Date();
 	if(this.target == "yesterday"){
 		date.setDate(date.getDate() - 1);
