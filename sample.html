@@ -12,8 +12,8 @@
 let target_date = document.querySelectorAll(".target_date");
 let target = "";
 
-target_date.forEach(function( tar ){
-	tar.addEventListener('click', {target: tar.id, handleEvent: getDate});
+target_date.forEach(( v ) => {
+	v.addEventListener('click', {target: v.id, handleEvent: getDate});
 })
 
 function getDate( e ){
