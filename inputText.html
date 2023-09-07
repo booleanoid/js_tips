@@ -16,7 +16,8 @@ target_date.forEach( v => {
 });
 
 function getDate(){
-	let date = new Date();
+	let date = () => new Date();
+	// let date = new Date();
 	if(this.target == "yesterday"){
 		date.setDate(date.getDate() - 1);
 	}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js object tips</title>
+</head>
+<body>
+<input type="text" id="date">
+<div id="today" class="target_date">今日の日付</div>
+<div id="yesterday" class="target_date">昨日の日付</div>
+<script type="text/javascript">
+
+console.log('-- 即時関数 --');
+let num = (function(a, b){
+	return a + b;
+})(2, 5);
+console.log(num);
+
+console.log('-- アロー関数 --');
+
+function hello(){
+	console.log('Hello');
+}
+
+// アロー関数
+// Javascriptは関数もオブジェクトの一種
+
+const hello = () => console.log('Hello');
+
+/*
+const hello = function (){
+	console.log('hello');
+}
+
+// functionは省略できる
+const hello = () {
+	console.log('hello');
+}
+
+
+const hello = () => {
+	console.log('hello');
+}
+
+// 関数の処理が1行で住む場合は{}を省略できる
+const hello = () =>	console.log('hello');
+*/
+
+
+
+</script>
+
+</body>
+</html>
