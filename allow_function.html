@@ -26,32 +26,37 @@ let text3 = t => console.log(t);
 text3("asdfsfd");
 
 
+let ele = [3,4,5,6,7,8,9];
+
 // アロー関数
-forEach((element) => {
-  /* … */
-});
-forEach((element, index) => {
-  /* … */
-});
-forEach((element, index, array) => {
+ele.forEach((element) => {
   /* … */
 });
 
+ele.forEach((element, index) => {
+  /* … */
+});
+ele.forEach((element, index, array) => {
+  /* … */
+});
+
+let callbackFn = () => console.log("cbfun");
+let thisArg = "";
 // コールバック関数
-forEach(callbackFn);
-forEach(callbackFn, thisArg);
+ele.forEach(callbackFn);
+ele.forEach(callbackFn, thisArg);
 
 // インラインコールバック関数
-forEach(function (element) {
+ele.forEach(function (element) {
   /* … */
 });
-forEach(function (element, index) {
+ele.forEach(function (element, index) {
   /* … */
 });
-forEach(function (element, index, array) {
+ele.forEach(function (element, index, array) {
   /* … */
 });
-forEach(function (element, index, array) {
+ele.forEach(function (element, index, array) {
   /* … */
 }, thisArg);
 
@@ -59,6 +64,13 @@ forEach(function (element, index, array) {
 
 // {} が関数処理の範囲を表すため、オブジェクトを返す場合は()で囲む必要がある。
 let obje = o => ({o:id, o:name});
+
+// 5を足す関数　mapを利用して
+let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+let addFive = numbers.map( e => e + 5 );
+
+console.log(addFive);
+
 
 </script>
 
