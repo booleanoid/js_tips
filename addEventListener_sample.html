@@ -13,12 +13,10 @@
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function() {
 			var btn = document.getElementById('btn');
-			btn.addEventListener('click', function() {
-				window.alert('clicked!');
-			}, false);
+			btn.addEventListener('click', () =>	window.alert('clicked!'), false);
 
 			var replace_text = document.getElementById('replace_text');
-			replace_text.addEventListener('click', function(e) {
+			replace_text.addEventListener('click', e => {
 				document.getElementById('replace_text').innerHTML = '<select name="example"><option value="サンプル1">サンプル1</option><option value="サンプル2">サンプル2</option><option value="サンプル3">サンプル3</option></select>'
 				var target = e.target;
 				console.log('発生元:' + target.nodeName + '-' + target.id);
