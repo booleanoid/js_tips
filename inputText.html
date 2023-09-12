@@ -11,9 +11,7 @@
 
 let target_date = document.querySelectorAll(".target_date");
 
-target_date.forEach( v => {
-	v.addEventListener('click', {target: v.id, handleEvent: getDate});
-});
+target_date.forEach( v => v.addEventListener('click', {target: v.id, handleEvent: getDate}) );
 
 function getDate(){
 	let date = new Date();
@@ -24,14 +22,7 @@ function getDate(){
 }
 
 let getYmd = d => d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
-// function getYmd( d ){
-// 	return d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
-// }
-
 let innerText = d => document.getElementById("date").value = d;
-// function innerText( d ){
-// 	document.getElementById("date").value = d;
-// }
 
 </script>
 
