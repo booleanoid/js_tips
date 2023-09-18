@@ -9,20 +9,20 @@
 <div id="yesterday" class="target_date">昨日の日付</div>
 <script type="text/javascript">
 
-let target_date = document.querySelectorAll(".target_date");
+	let target_date = document.querySelectorAll(".target_date");
 
-target_date.forEach( v => v.addEventListener('click', {target: v.id, handleEvent: getDate}) );
+	target_date.forEach( v => v.addEventListener('click', {target: v.id, handleEvent: getDate}) );
 
-function getDate(){
-	let date = new Date();
-	if(this.target == "yesterday"){
-		date.setDate(date.getDate() - 1);
+	function getDate(){
+		let date = new Date();
+		if(this.target == "yesterday"){
+			date.setDate(date.getDate() - 1);
+		}
+		innerText(getYmd( date ));
 	}
-	innerText(getYmd( date ));
-}
 
-let getYmd = d => d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
-let innerText = d => document.getElementById("date").value = d;
+	let getYmd = d => d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
+	let innerText = d => document.getElementById("date").value = d;
 
 </script>
 
