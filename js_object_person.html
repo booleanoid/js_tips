@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js object tips</title>
+</head>
+<body>
+	<script>
+		const person = {
+			name: ["andrew", "Jackson"],
+			age: 46,
+			bio: function(){
+				console.log(`${this.name[0]}`);
+			},
+			introduce(){
+				console.log(`Hi! I'm ${this.name[0]}.`);
+			}
+
+		};
+
+		// console.log(person.bio());
+		person.introduce();
+
+
+	</script>
+
+</body>
+</html>
