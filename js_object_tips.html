@@ -32,16 +32,24 @@
 		//forEach
 		console.log('-forEach-----------');
 		var ary3 = new Array(1, 2, 4, 8, 16, 32);
+		console.log(ary3);
 		ary3.forEach(function(value, index, array) {
 			console.log(value + '*' + value + '=' + value * value);
 			// console.log(array);
 		});
 
+		console.log('-Array push-----------');
+		let cb_result_first = [];
+		ary3.forEach(function(value, index, array) {
+			cb_result_first.push(value * value);
+			// console.log(array);
+		});
+		console.log(cb_result_first);
+		
+
 		//callback map
 		console.log('-callback map-----');
-		var cb_result = ary3.map(function(v, i, a){
-			return v * v;
-		});
+		var cb_result = ary3.map( v => v * v );
 		console.log(cb_result);
 
 		//some method
@@ -110,6 +118,29 @@
 		var str = 'console.log("eval test")';
 		eval(str);
 
+
+	class Person {
+		constructor(first_name, last_name) {
+			this.first_name = first_name;
+			this.last_name = last_name;
+			}
+		getIntruduce() {
+			return "My name is " + this.first_name + " " + this.last_name;
+			
+		}
+	}
+
+	let p = new Person("Hideyo", "Horimoto");
+	console.log(p.getIntruduce());
+
+	let person = {};
+	person.first_name = "ssss";
+	person.last_name = "aaa";
+
+	person.getIntruduce = function(){
+		return this.first_name + this.last_name;
+	}
+	ppp.getIntruduce();
 
 
 
