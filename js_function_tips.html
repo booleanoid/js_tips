@@ -42,6 +42,28 @@
 		console.log(closureObj());
 		console.log(closureObj());
 
+
+		console.log('---------------------');
+		let display_max = (...e) =>	Math.max.apply(null, e);
+		
+		console.log(display_max(1,458,7,9,60));
+
+
+		console.log('---------------------');
+		let nums = e => [...Array(e)].map((v, i)=> i);
+
+		console.log(nums(100));
+
+
+		let sum = (...n) => {
+			let t = 0;
+			n.forEach( e => t += e );
+			return t;
+		}
+
+		console.log(sum(3,4,5,10));
+
+
 	</script>
 
 </body>
